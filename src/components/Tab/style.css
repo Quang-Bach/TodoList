@@ -1,0 +1,11 @@
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+
+  border-bottom: 1px solid #e0e0e0;
+}
+.tab-container .tab-item {
+  padding: 16px 24 px;
+  cursor: pointer;
+}
