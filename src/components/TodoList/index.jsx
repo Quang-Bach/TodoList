@@ -1,9 +1,15 @@
 import TodoItem from "../TodoItem";
 import "./style.css";
-const TodoList = ({ todos, activeTab, onDelete, onCompleted }) => {
+const TodoList = ({
+  todos,
+  activeTab,
+  onDelete,
+  onCompleted,
+  onDeleteCompleted,
+}) => {
   let filteredTodos = [];
   if (activeTab === "all") {
-    filteredTodos = todos;
+    filteredTodos = [...todos];
   }
 
   if (activeTab === "active") {
@@ -22,6 +28,9 @@ const TodoList = ({ todos, activeTab, onDelete, onCompleted }) => {
           onCompleted={onCompleted}
         />
       ))}
+      {filteredTodos.length > 0 && activeTab === "completed" && (
+        <button onClick={onDeleteCompleted}>Delete all</button>
+      )}
     </div>
   );
 };

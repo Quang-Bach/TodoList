@@ -47,6 +47,11 @@ function App() {
   const handleTabChange = (tabValue) => {
     setActiveTab(tabValue);
   };
+
+  const handleDeleteCompleted = () => {
+    const newTodos = todos.filter((item) => item.isCompleted === false);
+    setTodos(newTodos);
+  };
   return (
     <div className="app-container">
       <h1>#todo</h1>
@@ -61,6 +66,7 @@ function App() {
         activeTab={activeTab}
         onDelete={handleDeleteTodo}
         onCompleted={handleCompletedTodo}
+        onDeleteCompleted={handleDeleteCompleted}
       />
     </div>
   );
