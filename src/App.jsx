@@ -32,6 +32,16 @@ function App() {
     const newTodos = todos.filter((item) => item.id !== id);
     setTodos(newTodos);
   };
+
+  const handleCompletedTodo = (id) => {
+    const newTodos = todos.map((item) => {
+      if (item.id === id) {
+        return { ...item, isCompleted: !item.isCompleted };
+      }
+      return item;
+    });
+    setTodos(newTodos);
+  };
   return (
     <div className="app-container">
       <h1>#todo</h1>
@@ -41,7 +51,11 @@ function App() {
         onChange={handleInputChange}
         onSubmit={handleFormSubmit}
       />
-      <TodoList todos={todos} onDelete={handleDeleteTodo} />
+      <TodoList
+        todos={todos}
+        onDelete={handleDeleteTodo}
+        onCompleted={handleCompletedTodo}
+      />
     </div>
   );
 }

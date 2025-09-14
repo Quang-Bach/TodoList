@@ -2,4 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
+}
+.todo-item-container .todo-item-detail {
+  flex: 1;
+}
+.todo-item-container__completed .todo-item-detail {
+  text-decoration: line-through;
 }
