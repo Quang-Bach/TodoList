@@ -9,6 +9,7 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [formInput, setFormInput] = useState("");
+  const [activeTab, setActiveTab] = useState("all"); //có 3 giá trị là: all, active và completed ( tương ướng với 3 tab)
 
   const handleInputChange = (e) => {
     setFormInput(e.target.value);
@@ -42,10 +43,14 @@ function App() {
     });
     setTodos(newTodos);
   };
+
+  const handleTabChange = (tabValue) => {
+    setActiveTab(tabValue);
+  };
   return (
     <div className="app-container">
       <h1>#todo</h1>
-      <Tab />
+      <Tab onChange={handleTabChange} />
       <Form
         value={formInput}
         onChange={handleInputChange}
@@ -53,6 +58,7 @@ function App() {
       />
       <TodoList
         todos={todos}
+        activeTab={activeTab}
         onDelete={handleDeleteTodo}
         onCompleted={handleCompletedTodo}
       />
