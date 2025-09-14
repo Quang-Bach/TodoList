@@ -1,11 +1,11 @@
 import TodoItem from "../TodoItem";
 import "./style.css";
-const TodoList = () => {
+const TodoList = ({ todos, onDelete }) => {
   return (
     <div className="todo-list-container">
-      <div>
-        <TodoItem />
-      </div>
+      {todos.map((item) => (
+        <TodoItem key={item.id} todo={item} onDelete={onDelete} />
+      ))}
     </div>
   );
 };
