@@ -17,6 +17,12 @@ function App() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // check xem người dùng có nhập chữ vào ô input hay khong?
+
+    if (formInput.trim() === "") {
+      alert("Please enter valid todo"); // nếu không nhập thì hiện thông báo lỗi và KHÔNG thực hiện tạo todo mới
+      return; // return để dừng lại không thực hiện các bước bên dưới
+    }
 
     const newTodo = {
       id: uuidv4(),
