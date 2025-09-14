@@ -7,6 +7,16 @@
 .todo-item-container .todo-item-detail {
   flex: 1;
 }
-.todo-item-container__completed .todo-item-detail {
+.todo-item-container .todo-item-delete-button {
+  border: none;
+
+  background-color: transparent;
+  color: #d32f2f;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+.todo-item-container--completed .todo-item-detail {
   text-decoration: line-through;
 }

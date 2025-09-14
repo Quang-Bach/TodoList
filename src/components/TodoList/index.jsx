@@ -29,7 +29,12 @@ const TodoList = ({
         />
       ))}
       {filteredTodos.length > 0 && activeTab === "completed" && (
-        <button onClick={onDeleteCompleted}>Delete all</button>
+        <button
+          onClick={onDeleteCompleted}
+          className="todo-list-delete-all-button"
+        >
+          Delete all
+        </button>
       )}
     </div>
   );

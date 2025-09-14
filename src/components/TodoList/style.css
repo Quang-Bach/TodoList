@@ -1,0 +1,19 @@
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.todo-list-container .todo-list-delete-all-button {
+  align-self: flex-end;
+
+  padding: 8px 16px;
+
+  background-color: #d32f2f;
+  color: white;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}

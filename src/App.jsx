@@ -60,8 +60,8 @@ function App() {
   };
   return (
     <div className="app-container">
-      <h1>#todo</h1>
-      <Tab onChange={handleTabChange} />
+      <h1 className="app-title">#todo</h1>
+      <Tab activeTab={activeTab} onChange={handleTabChange} />
       <Form
         value={formInput}
         onChange={handleInputChange}

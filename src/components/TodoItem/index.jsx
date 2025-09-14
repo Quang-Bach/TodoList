@@ -1,9 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
+
 const TodoItem = ({ todo, onDelete, onCompleted }) => {
   return (
     <div
       className={`todo-item-container ${
-        todo.isCompleted === true ? "todo-item-container__completed" : ""
+        todo.isCompleted === true ? "todo-item-container--completed" : ""
       }`}
     >
       <input
@@ -18,7 +21,7 @@ const TodoItem = ({ todo, onDelete, onCompleted }) => {
           className="todo-item-delete-button"
           onClick={() => onDelete(todo.id)}
         >
-          Xóa
+          <FontAwesomeIcon icon={faTrash} />
         </button>
       )}
     </div>
