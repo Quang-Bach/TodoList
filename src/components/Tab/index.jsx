@@ -6,7 +6,7 @@ const Tab = ({ activeTab, onChange }) => {
         className={`tab-item ${activeTab === "all" ? "tab-item--active" : ""}`}
         onClick={() => onChange("all")}
       >
-        All
+        ALL
       </div>
       <div
         className={`tab-item ${
@@ -14,7 +14,7 @@ const Tab = ({ activeTab, onChange }) => {
         }`}
         onClick={() => onChange("active")}
       >
-        active
+        ACTIVE
       </div>
       <div
         className={`tab-item ${
@@ -22,7 +22,7 @@ const Tab = ({ activeTab, onChange }) => {
         }`}
         onClick={() => onChange("completed")}
       >
-        Completed
+        COMPLETED
       </div>
     </div>
   );
